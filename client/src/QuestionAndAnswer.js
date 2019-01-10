@@ -14,7 +14,7 @@ class QuestionAndAnswer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="q_and_a">
         <Question />
         <h3>Answers</h3>
         <Answer />
