@@ -30,6 +30,13 @@ h1 {
   align-items: center;
 }
 
+.browse {
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header-caption {
   margin-bottom: 6rem;
 }
@@ -46,8 +53,8 @@ input {
   padding: 0.2rem;
 }
 .question {
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .vote {

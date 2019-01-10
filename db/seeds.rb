@@ -11,14 +11,42 @@
 
 question = Question.create(header: "How do I change a tire?", body: "I have a Ford Focus with a flat and I'm stranded on I-95. If anyone could get back to me within the next 30 minutes that would be awesome.Thanks.")
 
+  question.answers.create(body: "Dude, what?")
+  question.answers.create(body: "...Are you serious...")
+  question.answers.create(body: "Dude, what?")
+
 question = Question.create(header: "How do I boil water?", body: "I took a jug of water and poured it into a pot on the stove. I have been rubbing two sticks vigorously on the sides of the pot for like 15 minutes but nothing is happening. Is there an easier way?")
+
+  question.answers.create(body: "Dude, what?")
+  question.answers.create(body: "...Are you serious...")
+  question.answers.create(body: "Stick your head in the pot and turn on the stove, maybe?")
 
 question = Question.create(header: "How do I eat pasta upside down?", body: "I tried to duct tape my feet to the ceiling while I ate spaghetti but it kept getting up my nose and falling onto the floor. Also my feet keep coming detached and I've been breaking a lot of furniture from falling. Can someone make some recommendations?")
 
+  question.answers.create(body: "Dude, what?")
+  question.answers.create(body: "...Are you serious...")
+  question.answers.create(body: "Dude, what?")
+
 question = Question.create(header: "What are the 3 major components of a Rails app?", body: "There are 3 things that back end developers use, if I am remembering correctly. One of them is a 'view' but I can't remember the other two.")
+
+question.answers.create(body: "Dude, what?")
+  question.answers.create(body: "...Are you serious...")
+  question.answers.create(body: "Dude, what?")
 
 question = Question.create(header: "What is a React component?", body: "That's all I got. What is a React component?")
 
+question.answers.create(body: "Dude, what?")
+  question.answers.create(body: "...Are you serious...")
+  question.answers.create(body: "Dude, what?")
+
 question = Question.create(header: "What city holds the world record for the most sun?", body: "I heard one time that there was a city that had 765 consecutive days of sunshine and that this city holds the world record for that. Which one is it?")
 
+question.answers.create(body: "Dude, what?")
+  question.answers.create(body: "...Are you serious...")
+  question.answers.create(body: "Dude, what?")
+
 question = Question.create(header: "How do I use Google?", body: "I have so many questions that I want to ask but I don't know how to use Google. Help?")
+
+  question.answers.create(body: "Dude, what?")
+  question.answers.create(body: "...Are you serious...")
+  question.answers.create(body: "Dude, what?")

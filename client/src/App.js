@@ -3,6 +3,7 @@ import Question from './Question'
 import QuestionAndAnswer from './QuestionAndAnswer'
 import Home from './Home'
 import Header from './Header'
+import Browse from './Browse'
 
 class App extends Component {
   render() {
@@ -10,7 +11,8 @@ class App extends Component {
       <>
         <Header />
         {/* <Home /> */}
-        <QuestionAndAnswer />
+        {/* <QuestionAndAnswer /> */}
+        <Browse />
       </>
     )
   }
