@@ -6,7 +6,15 @@ class Browse extends Component {
     return (
       <div className="browse">
         {this.props.questions.map((question, index) => {
-          return <Question key={index} header={question.header} body={question.body} />
+          return (
+            <Question
+              value={question.id}
+              key={index}
+              header={question.header}
+              body={question.body}
+              changeStateOfQuestionID={this.props.changeStateOfQuestionID}
+            />
+          )
         })}
       </div>
     )

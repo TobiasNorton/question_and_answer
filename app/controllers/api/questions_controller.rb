@@ -10,13 +10,6 @@ class Api::QuestionsController < ApplicationController
           header: question.header,
           body: question.body, 
           rating: question.rating,
-          answers: question.answers.map do |answer|
-            {
-              id: answer.id,
-              body: answer.body,
-              rating: answer.rating,
-            }
-          end
         }
       end
     }
@@ -33,8 +26,22 @@ class Api::QuestionsController < ApplicationController
     }
   end
 
-  def show_question_with_answers
-    new_questions = Profile.find[params: id]
+  def select_question
+    question = Question.find(params[:id])
+
+    render json: {
+      id: question.id,
+      header: question.header,
+      body: question.body, 
+      rating: question.rating,
+      answers: question.answers.map do |answer|
+        {
+          id: answer.id,
+          body: answer.body,
+          rating: answer.rating,
+        }
+      end
+    }
   end
 
   private

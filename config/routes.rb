@@ -3,7 +3,7 @@ Rails.application.routes.draw do
         #path           #controller name/method name in controller
   get '/api/questions', to: 'api/questions#index'
   post '/api/questions/new', to: 'api/questions#post_question'
-
+  get '/api/questions/:id', to: 'api/questions#select_question'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   if Rails.env.production?

@@ -34,7 +34,22 @@ class App extends Component {
     // axios call to remove to rating
   }
 
-  selectQuestion = () => {
+  changeStateOfQuestionID = event => {
+    console.log(event.target.value)
+    // this.setState({
+    //   question_id: event.target.value.id
+    // })
+  }
+
+  selectQuestion = event => {
+    axios.get(`api/question/{this.state.${this.state.question_id}`).then(response => {
+      this.setState(
+        {
+          chosenQuestion: response.data
+        },
+        console.log(this.state.question_id)
+      )
+    })
     // use question_id to do a axios call to get the single
     // question from api
     // then setstate to the question
@@ -51,7 +66,11 @@ class App extends Component {
           addRatingToAnswer={this.addRatingToAnswer}
           subtractRatingFromAnswer={this.subtractRatingFromAnswer}
         />
-        <Browse questions={this.state.questions} question_id={this.state.question_id} />
+        <Browse
+          questions={this.state.questions}
+          question_id={this.state.question_id}
+          changeStateOfQuestionID={this.changeStateOfQuestionID}
+        />
       </>
     )
   }
