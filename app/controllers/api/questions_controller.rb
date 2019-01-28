@@ -30,17 +30,19 @@ class Api::QuestionsController < ApplicationController
     question = Question.find(params[:id])
 
     render json: {
-      id: question.id,
-      header: question.header,
-      body: question.body, 
-      rating: question.rating,
-      answers: question.answers.map do |answer|
-        {
-          id: answer.id,
-          body: answer.body,
-          rating: answer.rating ? answer.rating : 0
-        }
-      end
+      question: { 
+        id: question.id,
+        header: question.header,
+        body: question.body, 
+        rating: question.rating,
+        answers: question.answers.map do |answer|
+          {
+            id: answer.id,
+            body: answer.body,
+            rating: answer.rating ? answer.rating : 0
+          }
+        end
+      }
     }
   end
 

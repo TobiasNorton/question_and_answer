@@ -28,16 +28,11 @@ class Home extends Component {
           <input type="text" placeholder="How do I divide the letter Q by 4?" />
           <button type="submit">Submit</button>
         </form>
-        {this.state.allQuestions.map(question => {
+        {this.state.allQuestions.map((question, index) => {
           return (
-            <>
-              <Question
-                key={question.id}
-                id={question.id}
-                header={question.header}
-                body={question.body}
-              />
-            </>
+            <div key={index}>
+              <Question id={question.id} header={question.header} body={question.body} />
+            </div>
           )
         })}
 

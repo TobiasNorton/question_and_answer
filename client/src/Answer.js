@@ -18,13 +18,10 @@ class Answer extends Component {
               
             )
           })} */}
-        <p>
-          ...Are you serious? my stove and I've been rubbing it vigorously with a pair of sticks to
-          get the friction going. Is there an easier way?
-        </p>
+        <p>{this.props.body}</p>
         <div className="vote">
           <button onClick={this.addRatingToAnswer}>up vote</button>
-          <h4>45</h4>
+          <h4>{this.props.rating}</h4>
           <button onClick={this.subtractRatingFromAnswer}>down vote</button>
         </div>
       </div>
