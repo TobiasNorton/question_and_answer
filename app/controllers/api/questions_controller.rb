@@ -38,7 +38,7 @@ class Api::QuestionsController < ApplicationController
         {
           id: answer.id,
           body: answer.body,
-          rating: answer.rating,
+          rating: answer.rating ? answer.rating : 0
         }
       end
     }

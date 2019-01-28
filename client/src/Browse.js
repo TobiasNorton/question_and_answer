@@ -2,10 +2,13 @@ import React, { Component } from 'react'
 import Question from './Question'
 
 class Browse extends Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
     return (
       <div className="browse">
-        {this.props.questions.map((question, index) => {
+        {/* {this.props.questions.map((question, index) => {
           return (
             <Question
               value={question.id}
@@ -15,7 +18,7 @@ class Browse extends Component {
               changeStateOfQuestionID={this.props.changeStateOfQuestionID}
             />
           )
-        })}
+        })} */}
       </div>
     )
   }

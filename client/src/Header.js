@@ -1,15 +1,21 @@
 import React, { Component } from 'react'
 
+import { Link } from 'react-router-dom'
+
 class Header extends Component {
-  search = event => {
-    console.log('search')
+  constructor(props) {
+    super(props)
   }
+  componentDidMount = () => {}
+  search = event => {}
   render() {
     return (
       <div>
         <div className="navBar">
-          <a href="#">Home</a>
-          <a href="#">Browse</a>
+          <Link to="/">Home</Link>
+          <Link to="/api/questions" questions={this.props.questions}>
+            Browse
+          </Link>
           <form className="navBar" onSubmit={this.search}>
             <input placeholder="Search questions here" />
           </form>

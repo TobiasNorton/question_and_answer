@@ -1,13 +1,23 @@
 import React, { Component } from 'react'
 import Answer from './Answer'
 
-class QuestionsAndAnswers extends Component {
+class QuestionAndAnswers extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      questionAndItsAnswers: {
+        answers: []
+      }
+    }
+  }
+
+  componentDidM
+
   render() {
     return (
       <div className="q_and_a">
         <div className="question">
-          <h3>{this.props.chosenQuestion.header}</h3>
-          <p>{this.props.chosenQuestion.body}</p>
           <div className="line" />
         </div>
         <h3>Answers</h3>
@@ -20,4 +30,4 @@ class QuestionsAndAnswers extends Component {
   }
 }
 
-export default QuestionsAndAnswers
+export default QuestionAndAnswers

@@ -1,7 +1,24 @@
 import React, { Component } from 'react'
 import Question from './Question'
+import axios from 'axios'
 
 class Home extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      allQuestions: []
+    }
+  }
+
+  componentDidMount = () => {
+    axios.get('/api/questions').then(response => {
+      this.setState({
+        allQuestions: response.data.questions
+      })
+    })
+  }
+
   render() {
     return (
       <div>
@@ -11,7 +28,20 @@ class Home extends Component {
           <input type="text" placeholder="How do I divide the letter Q by 4?" />
           <button type="submit">Submit</button>
         </form>
-        <div className="line" />
+        {this.state.allQuestions.map(question => {
+          return (
+            <>
+              <Question
+                key={question.id}
+                id={question.id}
+                header={question.header}
+                body={question.body}
+              />
+            </>
+          )
+        })}
+
+        {/* <div className="line" />
         <Question />
         <div className="line" />
         <Question />
@@ -22,7 +52,7 @@ class Home extends Component {
         <div className="line" />
         <Question />
         <div className="line" />
-        <Question />
+        <Question /> */}
       </div>
     )
   }
