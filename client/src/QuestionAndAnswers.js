@@ -55,7 +55,15 @@ class QuestionAndAnswers extends Component {
           <button type="submit">Submit</button>
         </form>
         {this.state.questionAndItsAnswers.answers.map(answer => {
-          return <Answer key={answer.id} body={answer.body} rating={answer.rating} />
+          return (
+            <Answer
+              key={answer.id}
+              id={answer.id}
+              body={answer.body}
+              loadAnswers={this.loadAnswers}
+              rating={answer.rating}
+            />
+          )
         })}
       </div>
     )

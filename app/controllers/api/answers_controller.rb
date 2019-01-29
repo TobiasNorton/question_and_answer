@@ -14,6 +14,10 @@ class Api::AnswersController < ApplicationController
     end
   end
 
+  def delete
+    deleted_answer = Answer.find(params[:id]).destroy
+  end 
+
   # <input type="hidden" name="answer[question_id]" value={this.props.match.params.id}></input>
   # <textarea name="answer[body]" placeholder="Know the answer?" />
 

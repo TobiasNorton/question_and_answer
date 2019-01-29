@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/api/questions/:id', to: 'api/questions#select_question'
 
   post '/api/answers/new', to: 'api/answers#create'
+  delete '/api/answers/:id', to: 'api/answers#delete'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   if Rails.env.production?
