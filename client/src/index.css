@@ -72,3 +72,9 @@ button {
   width: 100%;
   margin: 2vw;
 }
+
+textarea {
+  width: 20rem;
+  margin: 1rem;
+  font-size: 1rem;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Question from './Question'
 import axios from 'axios'
+import NewQuestion from './NewQuestion'
 
 class Home extends Component {
   constructor(props) {
@@ -12,6 +13,9 @@ class Home extends Component {
   }
 
   componentDidMount = () => {
+    this.reloadQuestions()
+  }
+  reloadQuestions = () => {
     axios.get('/api/questions').then(response => {
       this.setState({
         allQuestions: response.data.questions
@@ -24,10 +28,7 @@ class Home extends Component {
       <div>
         <h3 className="header-caption">Have a question? The world has answers.</h3>
         <h3>Ask anything.</h3>
-        <form>
-          <input type="text" placeholder="How do I divide the letter Q by 4?" />
-          <button type="submit">Submit</button>
-        </form>
+        <NewQuestion reloadQuestions={this.reloadQuestions} />
         {this.state.allQuestions.map((question, index) => {
           return (
             <div key={index}>
@@ -35,19 +36,6 @@ class Home extends Component {
             </div>
           )
         })}
-
-        {/* <div className="line" />
-        <Question />
-        <div className="line" />
-        <Question />
-        <div className="line" />
-        <Question />
-        <div className="line" />
-        <Question />
-        <div className="line" />
-        <Question />
-        <div className="line" />
-        <Question /> */}
       </div>
     )
   }
