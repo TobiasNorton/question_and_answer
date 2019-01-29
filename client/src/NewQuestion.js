@@ -9,6 +9,7 @@ class NewQuestion extends Component {
     for (let pair of formData.entries()) {
       console.log(pair[0] + ', ' + pair[1])
     }
+
     axios.post('/api/questions/new', formData).then(response => {
       form.reset()
       this.props.reloadQuestions()

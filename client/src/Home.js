@@ -15,6 +15,7 @@ class Home extends Component {
   componentDidMount = () => {
     this.reloadQuestions()
   }
+
   reloadQuestions = () => {
     axios.get('/api/questions').then(response => {
       this.setState({

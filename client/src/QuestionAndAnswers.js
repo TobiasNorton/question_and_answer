@@ -40,6 +40,7 @@ class QuestionAndAnswers extends Component {
       this.loadAnswers()
     })
   }
+
   render() {
     return (
       <div className="q_and_a">

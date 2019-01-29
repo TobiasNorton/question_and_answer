@@ -6,8 +6,7 @@ class Header extends Component {
   constructor(props) {
     super(props)
   }
-  componentDidMount = () => {}
-  search = event => {}
+
   render() {
     return (
       <div>
