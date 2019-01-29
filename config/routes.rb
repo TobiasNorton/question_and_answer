@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/api/questions/new', to: 'api/questions#post_question'
   get '/api/questions/:id', to: 'api/questions#select_question'
 
+  post '/api/answers/new', to: 'api/answers#create'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   if Rails.env.production?
     CLIENT_HTML = File.read(Rails.root.join('public/index.html'))
