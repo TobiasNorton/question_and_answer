@@ -14,6 +14,11 @@ class Api::AnswersController < ApplicationController
     end
   end
 
+
+  def vote
+    new_vote = Answer.update(vote_params)
+  end
+
   def delete
     deleted_answer = Answer.find(params[:id]).destroy
   end 
@@ -21,5 +26,9 @@ class Api::AnswersController < ApplicationController
   private
   def answer_params
     params.require(:answer).permit(:body, :question_id)
+  end
+
+  def vote
+    params.require(:answer).permit(:rating, :question_id)
   end
 end
