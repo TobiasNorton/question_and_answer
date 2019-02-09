@@ -8,7 +8,9 @@ class Answer extends Component {
     })
   }
 
-  upvoteAnswer = () => {}
+  upvoteAnswer = () => {
+    axios.put(`/api/answers/upvote/${this.props.id}`).then(response => {})
+  }
 
   render() {
     return (

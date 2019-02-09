@@ -15,20 +15,49 @@ class Api::AnswersController < ApplicationController
   end
 
 
-  def vote
-    new_vote = Answer.update(vote_params)
+  def upvote
+    answer = Answer.find(params[:id])
+    new_upvote = answer.update(rating: answer.rating + 1)
+
+    if new_upvote.valid?
+      render json: {
+        is_added: "You added one vote"
+      }
+    else
+      render json: {
+        error: new_upvote.errors.full_messages
+      }
+    end
   end
+
+
+  def downvote
+    answer = Answer.find(params[:id])
+    new_upvote = answer.update(rating: answer.rating - 1)
+
+    if new_upvote.valid?
+      render json: {
+        is_added: "You added one vote"
+      }
+    else
+      render json: {
+        error: new_upvote.errors.full_messages
+      }
+    end
+  end
+
 
   def delete
     deleted_answer = Answer.find(params[:id]).destroy
   end 
+
 
   private
   def answer_params
     params.require(:answer).permit(:body, :question_id)
   end
 
-  def vote
+  def vote_params
     params.require(:answer).permit(:rating, :question_id)
   end
 end
