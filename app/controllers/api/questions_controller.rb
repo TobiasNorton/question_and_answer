@@ -46,6 +46,10 @@ class Api::QuestionsController < ApplicationController
     }
   end
 
+  def search
+    searched_question = Question.where('name ILIKE ?', "%#{params[:header]}%")
+  end
+
   private
 
   def question_params

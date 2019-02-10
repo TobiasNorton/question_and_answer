@@ -34,7 +34,6 @@ class Api::AnswersController < ApplicationController
   def downvote
     answer = Answer.find(params[:id])
     new_upvote = answer.update(rating: answer.rating.to_i - 1)
-
   end
 
 

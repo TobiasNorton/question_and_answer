@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 class Header extends Component {
   constructor(props) {
     super(props)
+  }
+
+  search = () => {
+    axios.get('/api/questions/search').then(response => {})
   }
 
   render() {
