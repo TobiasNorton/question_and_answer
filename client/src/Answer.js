@@ -9,7 +9,15 @@ class Answer extends Component {
   }
 
   upvoteAnswer = () => {
-    axios.put(`/api/answers/upvote/${this.props.id}`).then(response => {})
+    axios.put(`/api/answers/upvote/${this.props.id}`).then(response => {
+      this.props.loadAnswers()
+    })
+  }
+
+  downvoteAnswer = () => {
+    axios.put(`/api/answers/downvote/${this.props.id}`).then(response => {
+      this.props.loadAnswers()
+    })
   }
 
   render() {
