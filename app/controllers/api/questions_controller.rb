@@ -16,6 +16,8 @@ class Api::QuestionsController < ApplicationController
   end
 
   def post_question
+    puts question_params
+    puts "///////////"
     new_question = Question.create(question_params)
 
     render json: {
@@ -47,10 +49,13 @@ class Api::QuestionsController < ApplicationController
   end
 
   def search
-    questions = Question.all.where('name ILIKE ?', "%#{params[:header]}%")
+    puts "////////////////"
+    puts params[:keyword]
+    puts "////////////////"
+    questions = Question.where('header ILIKE ?', "%#{params[:keyword]}%")
 
     render json: {
-      questions: questions.map do |question| 
+      question: questions.map do |question| 
         { 
           id: question.id,
           header: question.header,
@@ -69,6 +74,10 @@ class Api::QuestionsController < ApplicationController
   end
 
   private
+
+  def search_params
+    params.require(:question).permit(:header)
+  end
 
   def question_params
     params.require(:question).permit(:header, :body)

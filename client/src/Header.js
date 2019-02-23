@@ -6,14 +6,29 @@ import axios from 'axios'
 class Header extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      userInput: undefined
+    }
+  }
+
+  addUserInput = event => {
+    this.setState({
+      userInput: event.target.value
+    })
   }
 
   search = event => {
     event.preventDefault()
-
-    const formData = new FormData(event.target)
-    axios.get('/api/search', formData).then(response => {
+    console.log(this.state.userInput)
+    // const formData = new FormData(userInput)
+    // for (let pair of formData.entries()) {
+    //   console.log(pair[0] + ', ' + pair[1])
+    // }
+    axios.get('/api/search', { keyword: this.state.userInput }).then(response => {
       // history.push('/questions/:id')
+
+      console.log(response.data)
     })
   }
 
@@ -26,7 +41,12 @@ class Header extends Component {
             Browse
           </Link>
           <form className="navBar" onSubmit={this.search}>
-            <input placeholder="Search questions here" />
+            <input
+              placeholder="Search by keyword"
+              type="text"
+              onChange={this.addUserInput}
+              name="keyword"
+            />
           </form>
         </div>
         <div>
