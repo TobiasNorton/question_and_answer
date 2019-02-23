@@ -1,7 +1,7 @@
 class Api::QuestionsController < ApplicationController
 
   def index
-    questions = Question.all
+    questions = Question.all.sort_by { |question| question.created_at }
 
     render json: {
       questions: questions.map do |question|
@@ -35,7 +35,7 @@ class Api::QuestionsController < ApplicationController
         header: question.header,
         body: question.body, 
         rating: question.rating,
-        answers: question.answers.map do |answer|
+        answers: (question.answers.sort_by { |answer| answer.created_at }).map do |answer|
           {
             id: answer.id,
             body: answer.body,
@@ -47,7 +47,25 @@ class Api::QuestionsController < ApplicationController
   end
 
   def search
-    searched_question = Question.where('name ILIKE ?', "%#{params[:header]}%")
+    questions = Question.all.where('name ILIKE ?', "%#{params[:header]}%")
+
+    render json: {
+      questions: questions.map do |question| 
+        { 
+          id: question.id,
+          header: question.header,
+          body: question.body, 
+          rating: question.rating,
+          answers: question.answers.map do |answer|
+            {
+              id: answer.id,
+              body: answer.body,
+              rating: answer.rating ? answer.rating : 0
+            }
+          end
+        }
+      end
+    }
   end
 
   private

@@ -30,7 +30,8 @@ class Home extends Component {
         <h3 className="header-caption">Have a question? The world has answers.</h3>
         <h3>Ask anything.</h3>
         <NewQuestion reloadQuestions={this.reloadQuestions} />
-        {this.state.allQuestions.map((question, index) => {
+        <h3>Top Questions</h3>
+        {this.state.allQuestions.splice(0, 5).map((question, index) => {
           return (
             <div key={index}>
               <Question id={question.id} header={question.header} body={question.body} />

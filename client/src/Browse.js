@@ -1,24 +1,39 @@
 import React, { Component } from 'react'
 import Question from './Question'
+import axios from 'axios'
 
 class Browse extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      questions: []
+    }
   }
+
+  componentDidMount = () => {
+    axios.get('/api/questions').then(response => {
+      this.setState({
+        questions: response.data.questions
+      })
+    })
+  }
+
   render() {
     return (
       <div className="browse">
-        {/* {this.props.questions.map((question, index) => {
+        {this.state.questions.map((question, index) => {
           return (
-            <Question
-              value={question.id}
-              key={index}
-              header={question.header}
-              body={question.body}
-              changeStateOfQuestionID={this.props.changeStateOfQuestionID}
-            />
+            <div key={index}>
+              <Question
+                value={question.id}
+                header={question.header}
+                body={question.body}
+                changeStateOfQuestionID={this.props.changeStateOfQuestionID}
+              />
+            </div>
           )
-        })} */}
+        })}
       </div>
     )
   }

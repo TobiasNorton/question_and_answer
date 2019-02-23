@@ -8,8 +8,13 @@ class Header extends Component {
     super(props)
   }
 
-  search = () => {
-    axios.get('/api/questions/search').then(response => {})
+  search = event => {
+    event.preventDefault()
+
+    const formData = new FormData(event.target)
+    axios.get('/api/search', formData).then(response => {
+      // history.push('/questions/:id')
+    })
   }
 
   render() {
@@ -17,7 +22,7 @@ class Header extends Component {
       <div>
         <div className="navBar">
           <Link to="/">Home</Link>
-          <Link to="/api/questions" questions={this.props.questions}>
+          <Link to="/questions" questions={this.props.questions}>
             Browse
           </Link>
           <form className="navBar" onSubmit={this.search}>
