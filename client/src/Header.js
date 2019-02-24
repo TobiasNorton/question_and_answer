@@ -26,7 +26,7 @@ class Header extends Component {
     //   console.log(pair[0] + ', ' + pair[1])
     // }
     axios.get(`/api/search/${this.state.userInput}`).then(response => {
-      history.push(`/questions/search/${this.state.userInput}`)
+      window.location = `/questions/search/${this.state.userInput}`
 
       console.log(response.data.question)
     })

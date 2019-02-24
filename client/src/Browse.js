@@ -12,12 +12,20 @@ class Browse extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.props.match.params.input)
-    axios.get('/api/questions/').then(response => {
-      this.setState({
-        questions: response.data.questions
+    if (this.props.match.params.input) {
+      axios.get(`/api/search/${this.props.match.params.input}`).then(response => {
+        console.log(response.data.questions)
+        this.setState({
+          questions: response.data.questions
+        })
       })
-    })
+    } else {
+      axios.get('/api/questions/').then(response => {
+        this.setState({
+          questions: response.data.questions
+        })
+      })
+    }
   }
 
   render() {

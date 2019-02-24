@@ -52,7 +52,7 @@ class Api::QuestionsController < ApplicationController
     questions = Question.where('header ILIKE ?', "%#{params[:input]}%")
 
     render json: {
-      question: questions.map do |question| 
+      questions: questions.map do |question| 
         { 
           id: question.id,
           header: question.header,
