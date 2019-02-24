@@ -9,7 +9,7 @@ class Api::QuestionsController < ApplicationController
           id: question.id,
           header: question.header,
           body: question.body, 
-          rating: question.rating,
+          rating: question.rating ? question.rating : 0,
         }
       end
     }
@@ -36,7 +36,7 @@ class Api::QuestionsController < ApplicationController
         id: question.id,
         header: question.header,
         body: question.body, 
-        rating: question.rating,
+        rating: question.rating ? question.rating : 0,
         answers: (question.answers.sort_by { |answer| answer.created_at }).map do |answer|
           {
             id: answer.id,
@@ -57,7 +57,7 @@ class Api::QuestionsController < ApplicationController
           id: question.id,
           header: question.header,
           body: question.body, 
-          rating: question.rating,
+          rating: question.rating ? question.rating : 0,
           answers: question.answers.map do |answer|
             {
               id: answer.id,
@@ -68,6 +68,31 @@ class Api::QuestionsController < ApplicationController
         }
       end
     }
+  end
+  
+  def upvote
+    question = Question.find(params[:id])
+    new_upvote = question.update(rating: question.rating.to_i + 1)
+
+    # if new_upvote.valid?
+    #   render json: {
+    #     is_added: "You added one vote"
+    #   }
+    # else
+    #   render json: {
+    #     error: new_upvote.errors.full_messages
+    #   }
+    # end
+  end
+
+
+  def downvote
+  question = Question.find(params[:id])
+    new_upvote = question.update(rating: question.rating.to_i - 1)
+  end
+
+  def delete
+    Question.find(params[:id]).destroy
   end
 
   private

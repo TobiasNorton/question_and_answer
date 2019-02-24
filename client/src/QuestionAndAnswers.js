@@ -30,12 +30,12 @@ class QuestionAndAnswers extends Component {
     event.preventDefault()
     let form = event.target
     let formData = new FormData(form)
-    for (let pair of formData.entries()) {
-      console.log(pair[0] + ', ' + pair[1])
-    }
+    // for (let pair of formData.entries()) {
+    //   console.log(pair[0] + ', ' + pair[1])
+    // }
 
     axios.post('/api/answers/new', formData).then(response => {
-      console.log(response.data)
+      // console.log(response.data)
       form.reset()
       this.loadAnswers()
     })
@@ -44,11 +44,7 @@ class QuestionAndAnswers extends Component {
   render() {
     return (
       <div className="q_and_a">
-        <Question
-          id={this.state.questionAndItsAnswers.id}
-          header={this.state.questionAndItsAnswers.header}
-          body={this.state.questionAndItsAnswers.body}
-        />
+        <Question question={this.state.questionAndItsAnswers} bool={true} />
         <h3>Answers</h3>
         <form onSubmit={this.createAnswer}>
           <input type="hidden" name="answer[question_id]" value={this.props.match.params.id} />

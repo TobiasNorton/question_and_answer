@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   post '/api/questions/new', to: 'api/questions#post_question'
   get '/api/questions/:id', to: 'api/questions#select_question'
   get '/api/search/:input', to: 'api/questions#search'
+  delete '/api/questions/:id', to: 'api/questions#delete'
+  put '/api/questions/upvote/:id', to: 'api/questions#upvote'
+  put '/api/questions/downvote/:id', to: 'api/questions#downvote'
+
 
   post '/api/answers/new', to: 'api/answers#create'
   delete '/api/answers/:id', to: 'api/answers#delete'
