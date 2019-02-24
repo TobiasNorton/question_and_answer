@@ -28,9 +28,9 @@ class Home extends Component {
     return (
       <div>
         <h3 className="header-caption">Have a question? The world has answers.</h3>
-        <h3>Ask anything.</h3>
+        <h3 className="question-prompt">Ask anything.</h3>
         <NewQuestion reloadQuestions={this.reloadQuestions} />
-        <h3>Top Questions</h3>
+        <h3 className="top-questions-header">Top Questions</h3>
         {this.state.allQuestions.splice(0, 5).map((question, index) => {
           return (
             <div key={index}>

@@ -39,6 +39,15 @@ h1 {
 
 .header-caption {
   margin-bottom: 6rem;
+  text-align: center;
+}
+
+.question-prompt {
+  text-align: center;
+}
+
+.top-questions-header {
+  text-align: center;
 }
 
 form {

@@ -75,9 +75,9 @@ class Api::QuestionsController < ApplicationController
 
   private
 
-  def search_params
-    params.require(:question).permit(:header)
-  end
+  # def search_params
+  #   params.require(:question).permit(:header)
+  # end
 
   def question_params
     params.require(:question).permit(:header, :body)
