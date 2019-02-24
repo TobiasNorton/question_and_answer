@@ -35,9 +35,7 @@ class Browse extends Component {
           return (
             <div key={index}>
               <Question
-                value={question.id}
-                header={question.header}
-                body={question.body}
+                question={question}
                 changeStateOfQuestionID={this.props.changeStateOfQuestionID}
               />
             </div>

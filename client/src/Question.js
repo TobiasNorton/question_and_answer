@@ -9,14 +9,16 @@ class Question extends Component {
   }
 
   render() {
+    const question = this.props.question
+    console.log(question)
     return (
       <div className="question">
-        <Link to={`/questions/${this.props.id}`}>
-          <h3 onClick={this.showID} value={this.props.key}>
-            {this.props.header}
+        <Link to={`/questions/${question.id}`}>
+          <h3 onClick={this.showID} value={question.key}>
+            {question.header}
           </h3>
         </Link>
-        <p>{this.props.body}</p>
+        <p>{question.body}</p>
         <div className="line" />
       </div>
     )

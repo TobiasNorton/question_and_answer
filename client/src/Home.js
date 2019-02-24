@@ -37,7 +37,7 @@ class Home extends Component {
         {this.state.allQuestions.splice(0, 5).map((question, index) => {
           return (
             <div key={index}>
-              <Question id={question.id} header={question.header} body={question.body} />
+              <Question question={question} />
             </div>
           )
         })}
