@@ -12,7 +12,8 @@ class Browse extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('/api/questions').then(response => {
+    console.log(this.props.match.params.input)
+    axios.get('/api/questions/').then(response => {
       this.setState({
         questions: response.data.questions
       })

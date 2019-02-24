@@ -68,6 +68,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/questions" component={Browse} />
           <Route exact path="/questions/:id" component={QuestionAndAnswers} />
+          <Route path="/questions/search/:input" component={Browse} />
         </div>
       </Router>
     )

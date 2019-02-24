@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import history from './history'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
@@ -25,10 +25,10 @@ class Header extends Component {
     // for (let pair of formData.entries()) {
     //   console.log(pair[0] + ', ' + pair[1])
     // }
-    axios.get('/api/search', { keyword: this.state.userInput }).then(response => {
-      // history.push('/questions/:id')
+    axios.get(`/api/search/${this.state.userInput}`).then(response => {
+      history.push(`/questions/search/${this.state.userInput}`)
 
-      console.log(response.data)
+      console.log(response.data.question)
     })
   }
 
@@ -36,6 +36,7 @@ class Header extends Component {
     return (
       <div>
         <div className="navBar">
+          <h5>Q & A</h5>
           <Link to="/">Home</Link>
           <Link to="/questions" questions={this.props.questions}>
             Browse
@@ -48,9 +49,6 @@ class Header extends Component {
               name="keyword"
             />
           </form>
-        </div>
-        <div>
-          <h1>Q & A</h1>
         </div>
       </div>
     )

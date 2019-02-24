@@ -49,10 +49,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def search
-    puts "////////////////"
-    puts params[:keyword]
-    puts "////////////////"
-    questions = Question.where('header ILIKE ?', "%#{params[:keyword]}%")
+    questions = Question.where('header ILIKE ?', "%#{params[:input]}%")
 
     render json: {
       question: questions.map do |question| 
