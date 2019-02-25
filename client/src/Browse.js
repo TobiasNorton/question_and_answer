@@ -12,14 +12,15 @@ class Browse extends Component {
   }
 
   componentDidMount = () => {
+    //If there is user input, perform a search
     if (this.props.match.params.input) {
       axios.get(`/api/search/${this.props.match.params.input}`).then(response => {
-        console.log(response.data.questions)
         this.setState({
           questions: response.data.questions
         })
       })
     } else {
+      //If there is no user input, return all questions
       axios.get('/api/questions/').then(response => {
         this.setState({
           questions: response.data.questions
@@ -45,10 +46,5 @@ class Browse extends Component {
     )
   }
 }
-
-// Display all questions in the database
-// 1. Fill state with all the questions
-// 2. Map every item in state and return each item
-// 3. We need to make sure they show up in the right place
 
 export default Browse
