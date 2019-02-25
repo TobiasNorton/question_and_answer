@@ -26,7 +26,7 @@ class Question extends Component {
   render() {
     return (
       <div className="question">
-        <Link to={`/questions/${this.props.question.id}`}>
+        <Link to={`/questions/${this.props.question.id}`} className="question-header">
           <h3 onClick={this.showID} value={this.props.question.key}>
             {this.props.question.header}
           </h3>

@@ -34,26 +34,6 @@ class QuestionAndAnswers extends Component {
     })
   }
 
-  //get id from state and pass to upvote
-  //
-  deleteQuestion = () => {
-    axios.delete(`/api/questions/${this.props.id}`).then(response => {
-      // this.props.loadAnswers()
-    })
-  }
-
-  upvoteQuestion = () => {
-    axios.put(`/api/questions/upvote/${this.props.id}`).then(response => {
-      // this.props.loadAnswers()
-    })
-  }
-
-  downvoteQuestion = () => {
-    axios.put(`/api/questions/downvote/${this.props.id}`).then(response => {
-      // this.props.loadAnswers()
-    })
-  }
-
   createAnswer = event => {
     event.preventDefault()
     let form = event.target
@@ -63,7 +43,6 @@ class QuestionAndAnswers extends Component {
     // }
 
     axios.post('/api/answers/new', formData).then(response => {
-      // console.log(response.data)
       form.reset()
       this.loadAnswers()
     })
