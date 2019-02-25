@@ -4,23 +4,41 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 class Question extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      question: {}
+    }
+  }
+
   deleteQuestion = () => {
-    axios.delete(`/api/questions/${this.props.id}`).then(response => {
-      this.props.loadAnswers()
+    axios.delete(`/api/questions/${this.props.question.id}`).then(response => {
+      // this.props.loadAnswers()
     })
   }
 
   upvoteQuestion = () => {
-    axios.put(`/api/questions/upvote/${this.props.id}`).then(response => {
-      this.props.loadAnswers()
+    console.log(this.props.question.id)
+    axios.put(`/api/questions/upvote/${this.props.question.id}`).then(response => {
+      this.props.loadQuestion()
     })
   }
 
   downvoteQuestion = () => {
-    axios.put(`/api/questions/downvote/${this.props.id}`).then(response => {
-      this.props.loadAnswers()
+    axios.put(`/api/questions/downvote/${this.props.question.id}`).then(response => {
+      this.props.loadQuestion()
     })
   }
+
+  // loadQuestion = () => {
+  //   axios.get(`/api/questions/${this.props.question.id}`).then(response => {
+  //     this.setState({
+  //       questionAndItsAnswers: response.data.question
+  //     })
+  //   })
+  // }
+
   render() {
     return (
       <div className="question">

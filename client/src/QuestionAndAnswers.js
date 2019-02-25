@@ -15,6 +15,14 @@ class QuestionAndAnswers extends Component {
   }
 
   componentDidMount = () => {
+    // axios.get(`/api/questions/${this.props.match.params.id}`).then(response => {
+    //   this.setState(
+    //     {
+    //       questionAndItsAnswers: response.data.question
+    //     },
+    //     () => this.state.questionAndItsAnswers
+    //   )
+    // })
     this.loadAnswers()
   }
 
@@ -23,6 +31,34 @@ class QuestionAndAnswers extends Component {
       this.setState({
         questionAndItsAnswers: response.data.question
       })
+    })
+  }
+
+  loadQuestion = () => {
+    axios.get(`/api/questions/${this.props.match.params.id}`).then(response => {
+      this.setState({
+        questionAndItsAnswers: response.data.question
+      })
+    })
+  }
+
+  //get id from state and pass to upvote
+  //
+  deleteQuestion = () => {
+    axios.delete(`/api/questions/${this.props.id}`).then(response => {
+      // this.props.loadAnswers()
+    })
+  }
+
+  upvoteQuestion = () => {
+    axios.put(`/api/questions/upvote/${this.props.id}`).then(response => {
+      // this.props.loadAnswers()
+    })
+  }
+
+  downvoteQuestion = () => {
+    axios.put(`/api/questions/downvote/${this.props.id}`).then(response => {
+      // this.props.loadAnswers()
     })
   }
 
@@ -44,7 +80,11 @@ class QuestionAndAnswers extends Component {
   render() {
     return (
       <div className="q_and_a">
-        <Question question={this.state.questionAndItsAnswers} bool={true} />
+        <Question
+          question={this.state.questionAndItsAnswers}
+          loadQuestion={this.loadQuestion}
+          bool={true}
+        />
         <h3>Answers</h3>
         <form onSubmit={this.createAnswer}>
           <input type="hidden" name="answer[question_id]" value={this.props.match.params.id} />
