@@ -15,14 +15,6 @@ class QuestionAndAnswers extends Component {
   }
 
   componentDidMount = () => {
-    // axios.get(`/api/questions/${this.props.match.params.id}`).then(response => {
-    //   this.setState(
-    //     {
-    //       questionAndItsAnswers: response.data.question
-    //     },
-    //     () => this.state.questionAndItsAnswers
-    //   )
-    // })
     this.loadAnswers()
   }
 
