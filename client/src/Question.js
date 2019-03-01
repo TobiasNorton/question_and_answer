@@ -6,7 +6,7 @@ import axios from 'axios'
 class Question extends Component {
   deleteQuestion = () => {
     axios.delete(`/api/questions/${this.props.question.id}`).then(response => {
-      // this.props.loadAnswers()
+      window.location = '/'
     })
   }
 

@@ -48,6 +48,7 @@ class Header extends Component {
               onChange={this.addUserInput}
               name="keyword"
             />
+            <button type="submit">awjcnq</button>
           </form>
         </div>
       </div>
