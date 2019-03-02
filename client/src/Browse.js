@@ -32,16 +32,18 @@ class Browse extends Component {
   render() {
     return (
       <div className="browse">
-        {this.state.questions.map((question, index) => {
-          return (
-            <div key={index}>
-              <Question
-                question={question}
-                changeStateOfQuestionID={this.props.changeStateOfQuestionID}
-              />
-            </div>
-          )
-        })}
+        <div className="browse-questions-container">
+          {this.state.questions.map((question, index) => {
+            return (
+              <div key={index}>
+                <Question
+                  question={question}
+                  changeStateOfQuestionID={this.props.changeStateOfQuestionID}
+                />
+              </div>
+            )
+          })}
+        </div>
       </div>
     )
   }

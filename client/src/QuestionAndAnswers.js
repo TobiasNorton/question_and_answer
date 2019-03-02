@@ -50,29 +50,31 @@ class QuestionAndAnswers extends Component {
 
   render() {
     return (
-      <div className="q_and_a">
-        <Question
-          question={this.state.questionAndItsAnswers}
-          loadQuestion={this.loadQuestion}
-          bool={true}
-        />
-        <h3>Answers</h3>
-        <form onSubmit={this.createAnswer}>
-          <input type="hidden" name="answer[question_id]" value={this.props.match.params.id} />
-          <textarea name="answer[body]" placeholder="Know the answer?" />
-          <button type="submit">Submit</button>
-        </form>
-        {this.state.questionAndItsAnswers.answers.map(answer => {
-          return (
-            <Answer
-              key={answer.id}
-              id={answer.id}
-              body={answer.body}
-              loadAnswers={this.loadAnswers}
-              rating={answer.rating}
-            />
-          )
-        })}
+      <div className="question-and-answers">
+        <div className="q_and_a">
+          <Question
+            question={this.state.questionAndItsAnswers}
+            loadQuestion={this.loadQuestion}
+            bool={true}
+          />
+          <h3>Answers</h3>
+          <form onSubmit={this.createAnswer}>
+            <input type="hidden" name="answer[question_id]" value={this.props.match.params.id} />
+            <textarea name="answer[body]" placeholder="Know the answer?" />
+            <button type="submit">Submit</button>
+          </form>
+          {this.state.questionAndItsAnswers.answers.map(answer => {
+            return (
+              <Answer
+                key={answer.id}
+                id={answer.id}
+                body={answer.body}
+                loadAnswers={this.loadAnswers}
+                rating={answer.rating}
+              />
+            )
+          })}
+        </div>
       </div>
     )
   }

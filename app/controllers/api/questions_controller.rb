@@ -16,8 +16,6 @@ class Api::QuestionsController < ApplicationController
   end
 
   def post_question
-    puts question_params
-    puts "///////////"
     new_question = Question.create(question_params)
 
     render json: {
@@ -73,16 +71,6 @@ class Api::QuestionsController < ApplicationController
   def upvote
     question = Question.find(params[:id])
     new_upvote = question.update(rating: question.rating.to_i + 1)
-
-    # if new_upvote.valid?
-    #   render json: {
-    #     is_added: "You added one vote"
-    #   }
-    # else
-    #   render json: {
-    #     error: new_upvote.errors.full_messages
-    #   }
-    # end
   end
 
 

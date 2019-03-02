@@ -48,11 +48,19 @@ h1 {
   flex-direction: column;
 }
 
-.browse {
-  max-width: 50rem;
+.question-and-answers {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+}
+
+.browse {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.browse-questions-container {
+  max-width: 50rem;
 }
 
 .question-header {
