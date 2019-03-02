@@ -49,7 +49,7 @@ class Header extends Component {
               onChange={this.addUserInput}
               name="keyword"
             />
-            <button type="submit" for="keyword">
+            <button type="submit" className="search-button">
               Search
             </button>
           </form>

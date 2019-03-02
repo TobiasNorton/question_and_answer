@@ -30,18 +30,19 @@ class Question extends Component {
           <h3 onClick={this.showID} value={this.props.question.key}>
             {this.props.question.header}
           </h3>
-        </Link>
-        <p>{this.props.question.body}</p>
-        {this.props.bool ? (
-          <div className="vote">
-            <button onClick={this.upvoteQuestion}>Upvote</button>
-            <h4>{this.props.question.rating}</h4>
-            <button onClick={this.downvoteQuestion}>Downvote</button>
-            <button onClick={this.deleteQuestion}>Delete This Question</button>
-          </div>
-        ) : null}
 
-        <div className="line" />
+          <p>{this.props.question.body}</p>
+          {this.props.bool ? (
+            <div className="vote">
+              <button onClick={this.upvoteQuestion}>Upvote</button>
+              <h4>{this.props.question.rating}</h4>
+              <button onClick={this.downvoteQuestion}>Downvote</button>
+              <button onClick={this.deleteQuestion}>Delete This Question</button>
+            </div>
+          ) : null}
+
+          <div className="line" />
+        </Link>
       </div>
     )
   }

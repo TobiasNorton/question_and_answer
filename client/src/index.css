@@ -29,6 +29,16 @@ body {
   display: flex;
 }
 
+.search-button {
+  font-size: 1rem;
+  padding: 0.2rem;
+  width: 6rem;
+  margin-left: 0.5rem;
+  background-color: hsla(185, 50%, 0%, 0);
+  color: white;
+  border-radius: 4px;
+}
+
 h1 {
   text-align: center;
   margin: 3rem 0 2rem 0;
@@ -102,10 +112,10 @@ input {
   justify-content: center;
   align-items: center;
 }
-button {
+/* button {
   height: 20px;
   margin: 5px;
-}
+} */
 .line {
   background-color: grey;
   height: 1px;
