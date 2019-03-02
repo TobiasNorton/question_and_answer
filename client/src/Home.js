@@ -19,14 +19,14 @@ class Home extends Component {
   reloadQuestions = () => {
     axios.get('/api/questions').then(response => {
       this.setState({
-        allQuestions: response.data.questions
+        allQuestions: response.data.questions.splice(0, 5)
       })
     })
   }
 
   render() {
     return (
-      <div>
+      <div className="home">
         <div>
           <h1>Q & A</h1>
         </div>
@@ -34,13 +34,15 @@ class Home extends Component {
         <h3 className="question-prompt">Ask anything.</h3>
         <NewQuestion reloadQuestions={this.reloadQuestions} />
         <h3 className="top-questions-header">Top Questions</h3>
-        {this.state.allQuestions.splice(0, 5).map((question, index) => {
-          return (
-            <div key={index}>
-              <Question question={question} />
-            </div>
-          )
-        })}
+        <div className="home-questions">
+          {this.state.allQuestions.map((question, index) => {
+            return (
+              <div key={index}>
+                <Question question={question} />
+              </div>
+            )
+          })}
+        </div>
       </div>
     )
   }

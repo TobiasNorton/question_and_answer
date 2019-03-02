@@ -20,15 +20,12 @@ class Header extends Component {
 
   search = event => {
     event.preventDefault()
-    console.log(this.state.userInput)
     // const formData = new FormData(userInput)
     // for (let pair of formData.entries()) {
     //   console.log(pair[0] + ', ' + pair[1])
     // }
     axios.get(`/api/search/${this.state.userInput}`).then(response => {
       window.location = `/questions/search/${this.state.userInput}`
-
-      console.log(response.data.question)
     })
   }
 
@@ -36,19 +33,25 @@ class Header extends Component {
     return (
       <div>
         <div className="navBar">
-          <h5>Q & A</h5>
-          <Link to="/">Home</Link>
-          <Link to="/questions" questions={this.props.questions}>
+          <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
+            Q & A
+          </Link>
+          <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
+            Home
+          </Link>
+          <Link to="/questions" style={{ color: 'white', textDecoration: 'none' }}>
             Browse
           </Link>
-          <form className="navBar" onSubmit={this.search}>
+          <form className="nav-search" onSubmit={this.search}>
             <input
               placeholder="Search by keyword"
               type="text"
               onChange={this.addUserInput}
               name="keyword"
             />
-            <button type="submit">awjcnq</button>
+            <button type="submit" for="keyword">
+              Search
+            </button>
           </form>
         </div>
       </div>
