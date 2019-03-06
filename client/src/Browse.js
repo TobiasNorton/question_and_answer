@@ -33,6 +33,7 @@ class Browse extends Component {
     return (
       <div className="browse">
         <div className="browse-questions-container">
+          <p className="browse-header">Browse Top Questions</p>
           {this.state.questions.map((question, index) => {
             return (
               <div key={index}>

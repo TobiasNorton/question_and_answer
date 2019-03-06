@@ -47,6 +47,7 @@ class Header extends Component {
               placeholder="Search by keyword"
               type="text"
               onChange={this.addUserInput}
+              autoComplete="off"
               name="keyword"
             />
             <button type="submit" className="search-button">

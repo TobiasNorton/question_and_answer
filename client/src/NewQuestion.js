@@ -19,7 +19,12 @@ class NewQuestion extends Component {
   render() {
     return (
       <form className="new-question-container" onSubmit={this.createQuestion}>
-        <input type="text" placeholder="Header for your question" name="question[header]" />
+        <input
+          type="text"
+          placeholder="Header for your question"
+          autoComplete="off"
+          name="question[header]"
+        />
         <textarea name="question[body]" placeholder="Body for your question" />
         <button type="submit">Submit</button>
       </form>
