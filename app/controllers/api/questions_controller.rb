@@ -35,7 +35,8 @@ class Api::QuestionsController < ApplicationController
         header: question.header,
         body: question.body, 
         rating: question.rating ? question.rating : 0,
-        answers: (question.answers.sort_by { |answer| answer.created_at }).map do |answer|
+        # answers: (question.answers.sort_by { |answer| answer.created_at }).map do |answer|
+        answers: question.answers.order('created_at DESC').map do |answer|
           {
             id: answer.id,
             body: answer.body,
