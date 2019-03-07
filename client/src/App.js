@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Question from './Question'
 import QuestionAndAnswers from './QuestionAndAnswers'
 import Home from './Home'
-import Header from './Header'
+import NavBar from './NavBar'
 import Browse from './Browse'
 import axios from 'axios'
 

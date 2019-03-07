@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Answer from './Answer'
 import axios from 'axios'
 import Question from './Question'
-import Header from './Header'
+import NavBar from './NavBar'
 
 class QuestionAndAnswers extends Component {
   constructor(props) {
@@ -52,7 +52,7 @@ class QuestionAndAnswers extends Component {
   render() {
     return (
       <div className="question-and-answers">
-        <Header />
+        <NavBar />
         <div className="q_and_a">
           <Question
             question={this.state.questionAndItsAnswers}

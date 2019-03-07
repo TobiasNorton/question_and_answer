@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Question from './Question'
 import axios from 'axios'
 import NewQuestion from './NewQuestion'
-import Header from './Header'
+import NavBar from './NavBar'
 
 class Home extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <Header />
+        <NavBar />
         <div className="main-logo">
           <h1 className="q">Q</h1>
           <h1 className="and">&</h1>

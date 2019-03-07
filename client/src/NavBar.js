@@ -3,7 +3,7 @@ import history from './history'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-class Header extends Component {
+class NavBar extends Component {
   constructor(props) {
     super(props)
 
@@ -60,4 +60,4 @@ class Header extends Component {
   }
 }
 
-export default Header
+export default NavBar

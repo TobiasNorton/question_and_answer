@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Question from './Question'
 import axios from 'axios'
-import Header from './Header'
+import NavBar from './NavBar'
 
 class Browse extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class Browse extends Component {
   render() {
     return (
       <div className="browse">
-        <Header />
+        <NavBar />
         <div className="browse-questions-container">
           <p className="browse-header">Browse Top Questions</p>
           {this.state.questions.map((question, index) => {

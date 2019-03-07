@@ -88,6 +88,11 @@ h1 {
   border: 1px solid white;
 }
 
+.top-questions {
+  background-color: white;
+  margin-top: 8rem;
+}
+
 .q_and_a {
   max-width: 50rem;
   display: flex;
