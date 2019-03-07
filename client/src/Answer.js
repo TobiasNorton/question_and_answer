@@ -26,10 +26,16 @@ class Answer extends Component {
         <div className="line" />
         <p>{this.props.body}</p>
         <div className="vote">
-          <button onClick={this.upvoteAnswer}>Upvote</button>
+          <button onClick={this.upvoteAnswer} className="button">
+            Upvote
+          </button>
           <h4>{this.props.rating}</h4>
-          <button onClick={this.downvoteAnswer}>Downvote</button>
-          <button onClick={this.deleteAnswer}>Delete This Answer</button>
+          <button onClick={this.downvoteAnswer} className="button">
+            Downvote
+          </button>
+          <button onClick={this.deleteAnswer} className="delete">
+            Delete This Answer
+          </button>
         </div>
       </div>
     )

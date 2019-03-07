@@ -58,7 +58,7 @@ class QuestionAndAnswers extends Component {
             bool={true}
           />
           <h3>Answers</h3>
-          <form onSubmit={this.createAnswer}>
+          <form onSubmit={this.createAnswer} className="answer-form">
             <input type="hidden" name="answer[question_id]" value={this.props.match.params.id} />
             <textarea name="answer[body]" placeholder="Know the answer?" />
             <button type="submit">Submit</button>

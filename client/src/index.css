@@ -84,6 +84,16 @@ h1 {
   color: black;
 }
 
+.answer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea {
+  padding: 0.4rem;
+}
+
 .header-caption {
   margin-top: 0;
   margin-bottom: 6rem;
@@ -120,10 +130,16 @@ input {
   justify-content: center;
   align-items: center;
 }
-/* button {
-  height: 20px;
-  margin: 5px;
-} */
+
+.vote .button {
+  margin: 1rem;
+  padding: 0.2rem 0.4rem 0.3rem 0.4rem;
+}
+
+.delete {
+  padding: 0.2rem 0.4rem 0.3rem 0.4rem;
+}
+
 .line {
   background-color: grey;
   height: 1px;
