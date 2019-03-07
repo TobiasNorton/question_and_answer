@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Question from './Question'
 import axios from 'axios'
 import NewQuestion from './NewQuestion'
+import Header from './Header'
 
 class Home extends Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
+        <Header />
         <div className="main-logo">
           <h1 className="q">Q</h1>
           <h1 className="and">&</h1>
@@ -35,16 +37,18 @@ class Home extends Component {
         <h3 className="header-caption">Have a question? The world has answers.</h3>
         <h3 className="question-prompt">Ask anything.</h3>
         <NewQuestion reloadQuestions={this.reloadQuestions} />
-        <h3 className="top-questions-header">Top Questions</h3>
-        <div className="home-questions">
-          {this.state.allQuestions.map((question, index) => {
-            return (
-              <div key={index}>
-                <Question question={question} />
-              </div>
-            )
-          })}
-        </div>
+        <section className="top-questions">
+          <h3 className="top-questions-header">Top Questions</h3>
+          <div className="home-questions">
+            {this.state.allQuestions.map((question, index) => {
+              return (
+                <div key={index}>
+                  <Question question={question} />
+                </div>
+              )
+            })}
+          </div>
+        </section>
       </div>
     )
   }

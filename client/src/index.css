@@ -16,14 +16,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(hsla(185, 0%, 0%, 0.2), hsla(185, 0%, 0%, 0.2)),
+    url('./meagan-h-1414289-unsplash.jpg');
+  /* background-image: url('./meagan-h-1414289-unsplash.jpg'); */
+  background-size: cover;
 }
 
 .navBar {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: black;
+  background-color: hsla(185, 0%, 0%, 0.5);
   padding: 1rem 0 1rem 0;
+  width: 100vw;
 }
 
 .nav-search {
@@ -38,6 +43,7 @@ body {
   background-color: hsla(185, 50%, 0%, 0);
   color: white;
   border-radius: 4px;
+  font-family: 'Cabin', sans-serif;
 }
 
 h1 {
@@ -51,18 +57,35 @@ h1 {
 }
 
 .q {
-  margin-right: -1.5rem;
+  margin-right: -1rem;
   color: red;
 }
 
 .and {
   font-size: 4rem;
   padding-bottom: 0;
+  color: white;
+  z-index: 1;
 }
 
 .a {
-  margin-left: -1.5rem;
+  margin-left: -1rem;
   color: blue;
+}
+
+.submit {
+  font-size: 1rem;
+  padding: 0.2rem;
+  width: 6rem;
+  margin-left: 0.5rem;
+  background-color: hsla(185, 50%, 0%, 0);
+  border-radius: 4px;
+  font-family: 'Cabin', sans-serif;
+}
+
+.home .submit {
+  color: white;
+  border: 1px solid white;
 }
 
 .q_and_a {
@@ -112,16 +135,19 @@ h1 {
 
 textarea {
   padding: 0.4rem;
+  font-family: 'Cabin', sans-serif;
 }
 
 .header-caption {
   margin-top: 0;
   margin-bottom: 6rem;
   text-align: center;
+  color: white;
 }
 
 .question-prompt {
   text-align: center;
+  color: white;
 }
 
 .top-questions-header {
@@ -138,6 +164,7 @@ input {
   width: 16rem;
   font-size: 1rem;
   padding: 0.2rem;
+  font-family: 'Cabin', sans-serif;
 }
 
 .question {
