@@ -27,8 +27,10 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <div>
-          <h1>Q & A</h1>
+        <div className="main-logo">
+          <h1 className="q">Q</h1>
+          <h1 className="and">&</h1>
+          <h1 className="a">A</h1>
         </div>
         <h3 className="header-caption">Have a question? The world has answers.</h3>
         <h3 className="question-prompt">Ask anything.</h3>

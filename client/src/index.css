@@ -1,5 +1,6 @@
 :root {
   font: 16px / 1 sans-serif;
+  font-family: 'Cabin', sans-serif;
 }
 
 html {
@@ -42,7 +43,26 @@ body {
 h1 {
   text-align: center;
   margin: 3rem 0 2rem 0;
-  font-size: 3rem;
+  font-size: 5rem;
+}
+
+.main-logo {
+  display: flex;
+}
+
+.q {
+  margin-right: -1.5rem;
+  color: red;
+}
+
+.and {
+  font-size: 4rem;
+  padding-bottom: 0;
+}
+
+.a {
+  margin-left: -1.5rem;
+  color: blue;
 }
 
 .q_and_a {
