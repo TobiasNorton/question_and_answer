@@ -34,11 +34,11 @@ class Question extends Component {
           <p>{this.props.question.body}</p>
           {this.props.bool ? (
             <div className="vote">
-              <button onClick={this.upvoteQuestion} className="button">
+              <button onClick={this.upvoteQuestion} className="vote-button">
                 Upvote
               </button>
               <h4>{this.props.question.rating}</h4>
-              <button onClick={this.downvoteQuestion} className="button">
+              <button onClick={this.downvoteQuestion} className="vote-button">
                 Downvote
               </button>
               <button onClick={this.deleteQuestion} className="delete">
