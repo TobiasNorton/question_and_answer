@@ -42,6 +42,7 @@ body {
     url('./meagan-h-1414289-unsplash.jpg');
   background-size: cover;
   padding-bottom: 8rem;
+  border-bottom: 0.5rem solid hsla(202, 79%, 50%, 1);
 }
 
 .main-logo {
@@ -132,6 +133,16 @@ h1 {
 
 .top-questions-header {
   text-align: center;
+}
+
+.question {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.comment {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .q_and_a {
