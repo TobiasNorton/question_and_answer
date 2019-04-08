@@ -6,9 +6,6 @@ class NewQuestion extends Component {
     event.preventDefault()
     let form = event.target
     let formData = new FormData(form)
-    for (let pair of formData.entries()) {
-      console.log(pair[0] + ', ' + pair[1])
-    }
 
     axios.post('/api/questions/new', formData).then(response => {
       form.reset()
