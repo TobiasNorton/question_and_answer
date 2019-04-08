@@ -18,16 +18,6 @@ class Api::AnswersController < ApplicationController
   def upvote
     answer = Answer.find(params[:id])
     new_upvote = answer.update(rating: answer.rating.to_i + 1)
-
-    # if new_upvote.valid?
-    #   render json: {
-    #     is_added: "You added one vote"
-    #   }
-    # else
-    #   render json: {
-    #     error: new_upvote.errors.full_messages
-    #   }
-    # end
   end
 
 
