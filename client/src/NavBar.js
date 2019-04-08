@@ -20,10 +20,6 @@ class NavBar extends Component {
 
   search = event => {
     event.preventDefault()
-    // const formData = new FormData(userInput)
-    // for (let pair of formData.entries()) {
-    //   console.log(pair[0] + ', ' + pair[1])
-    // }
     axios.get(`/api/search/${this.state.userInput}`).then(response => {
       window.location = `/questions/search/${this.state.userInput}`
     })

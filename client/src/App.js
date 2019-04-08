@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import Question from './Question'
 import QuestionAndAnswers from './QuestionAndAnswers'
 import Home from './Home'
-import NavBar from './NavBar'
 import Browse from './Browse'
-import axios from 'axios'
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
